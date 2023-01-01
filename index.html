@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-4xl text-center mt-4 font-bold">
+        Let's get some <span class="text-lime-500">money</span>
+      </h1>
+    </header>
+    <main class="w-3/4 mx-auto">
+      <!-- money transction  -->
+      <section class="text-white mt-8">
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-yellow-300 p-8 rounded">
+            <h3 class="text-2xl">Diposite</h3>
+            <h4 class="text-4xl">$<span id="diposite">00</span></h4>
+          </div>
+          <div class="bg-green-300 p-8 rounded">
+            <h3 class="text-2xl">Withdraw</h3>
+            <h4 class="text-4xl">$<span id="withdraw">00</span></h4>
+          </div>
+          <div class="bg-blue-300 p-8 rounded">
+            <h3 class="text-2xl">Balence</h3>
+            <h4 class="text-4xl">$<span id="total">1240</span></h4>
+          </div>
+        </div>
+      </section>
+      <!-- Diposite & withdraw money  -->
+
+      <section class="mt-8">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="bg-fuchsia-300 p-5 rounded">
+            <h2 class="text-2xl mb-2 font-medium">Please Deposite</h2>
+            <div>
+              <input
+                class="mb-2 p-2 w-6/12 rounded border border-lime-400 outline-transparent bg-white"
+                type="number"
+                name=""
+                id="diposit-amount"
+                placeholder="Enter you disposit money amount"
+              />
+              <br />
+
+              <button
+                id="diposit-btn"
+                class="bg-indigo-600 w-20 h-10 rounded text-white font-bold"
+              >
+                Diposit
+              </button>
+            </div>
+          </div>
+          <div class="bg-fuchsia-300 p-5 rounded">
+            <h2 class="text-2xl mb-2 font-medium">Please Withdraw</h2>
+            <div>
+              <input
+                class="mb-2 p-2 w-6/12 rounded border border-lime-400 outline-transparent bg-white"
+                type="number"
+                name=""
+                id="withdraw-amount"
+                placeholder="Enter you withdraw money amount"
+              />
+              <br />
+
+              <button
+                id="withdraw-btn"
+                class="bg-indigo-600 w-20 h-10 rounded text-white font-bold"
+              >
+                Withdraw
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
