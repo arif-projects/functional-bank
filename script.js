@@ -16,12 +16,19 @@ function upadatTotalFeild(id, inputValue) {
   total.innerText = previousTotal + inputValue;
 }
 
+//get current balence
+function getCurrentBalence() {
+  const balenceTotal = document.getElementById("total");
+  const balenceTotalText = balenceTotal.innerText;
+  const previousBalenceToal = parseFloat(balenceTotalText);
+  return previousBalenceToal;
+}
+
 //function for update balence
 
 function updateBalence(amount, isTrue) {
   const balenceTotal = document.getElementById("total");
-  const balenceTotalText = balenceTotal.innerText;
-  const previousBalenceToal = parseFloat(balenceTotalText);
+  const previousBalenceToal = getCurrentBalence();
   if (isTrue == true) {
     balenceTotal.innerText = previousBalenceToal + amount;
   } else {
@@ -41,7 +48,9 @@ document.getElementById("diposit-btn").addEventListener("click", function () {
 
 document.getElementById("withdraw-btn").addEventListener("click", function () {
   const inputValue = getInput("withdraw-amount");
-  if (inputValue > 0) {
+  const currentBalence = getCurrentBalence();
+
+  if (inputValue > 0 && inputValue < currentBalence) {
     upadatTotalFeild("withdraw", inputValue);
     updateBalence(inputValue, false);
   } else {
